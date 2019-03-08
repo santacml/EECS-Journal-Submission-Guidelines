@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{12}\selectfont}
+\usepackage[parfill]{parskip}
+\usepackage{titling}
+
+% https://texblog.org/2013/07/16/how-to-add-extra-space-to-the-table-of-contents-list-of-figures-and-tables/
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{0pt}
+
+\usepackage{enumitem}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% https://tex.stackexchange.com/questions/136527/section-numbering-without-numbers
+\makeatletter
+\def\@seccntformat#1{%
+  \expandafter\ifx\csname c@#1\endcsname\c@section\else
+  \csname the#1\endcsname\quad
+  \fi}
+\makeatother
+
+% https://tex.stackexchange.com/questions/59245/how-to-disable-automatic-indent
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\title{\textbf{University of Cincinnati EECS Journal Submission Guidelines}}
+\author{by the IEEE chapter at the University of Cincinncinati \rule{0pt}{0pt}}
+\date{March 2019\rule{0pt}{0pt}}
+
+
+
+
+
+\begin{document}
+
+\begin{titlepage}
+    \maketitle
+    
+    \vspace{5in}
+    \begin{center}
+        With support from students and faculty of the EECS Department
+    \end{center}
+    \pagenumbering{gobble}
+\end{titlepage}
+
+
+\pagenumbering{arabic}
+
+\tableofcontents
+
+\newpage
+
+
+\section{What is this document for?}
+The purpose of this document is to provide guidelines about what submissions to the UC EECS Journal should contain, and answer any questions people may have about the journal. This document should be treated as a living document that is updated as necessary. 
+
+\section{What is the journal about/what can I submit?}
+The UC EECS Journal is meant to highlight any and all great work that students have done in an accessible way - including research, but also including school projects or any projects done at home (do you contribute to some exciting project on GitHub? Did you make an Indie game?). If you think you have done or learned something cool, you can submit it.
+
+For instance, many 5000-8000 level classes (Complex Systems or Compiler Theory) culminate in a large final project, which would be great submissions. 
+
+The journal is \textbf{not} meant to be an academic journal. If you have some serious academic work, we recommend submitting to an academic journal. Publishing research in general, however, is highly encouraged. We just want to show people what students do!
+
+\section{Who is going to read the journal?}
+
+Anyone interested in work done by you. This includes other students, but possibly also alumni, employers, faculty, or your parents! We will try to send this journal to anyone and everyone.
+
+You do not know who will read your work. It is possible that someone will read it and think that you are a bright and capable person, worth hiring...
+
+\section{Can I submit a research paper I submitted elsewhere?}
+No. While this is not an academic journal, standard plagiarism rules apply. At the same time, you are highly encouraged to write a short summary of your work, with citations, and provide links so that people can read your work if interested.
+
+\section{How long should it be?}
+Abstract should be 100-200 words, and the total work should be 700-2000 words. These are not strict guidelines (do not add extra words to meet the count if you are just under), but anything severely over or under will not be accepted.
+
+\section{What template should I use/how should I write it?}
+We're still figuring the template out at this moment, and we will update this document as soon as we have one. We would recommend reading an academic paper or two if you have not already to get familiar with their general format.
+
+\LaTeX\ is highly encouraged (source and .pdf), but Word is acceptable as well. We will provide templates for both. If you've never used \LaTeX\, we would highly recommend using Overleaf, which is free, online, and has lots of functionality.
+
+\section{What is \LaTeX\ and why should I use it?}
+
+You're reading something written in it! From the \LaTeX\ website:
+
+``\LaTeX\, which is pronounced Lah-tech or Lay-tech (to rhyme with blech or Bertolt Brecht), is a document preparation system for high-quality typesetting. It is most often used for medium-to-large technical or scientific documents but it can be used for almost any form of publishing."
+
+\LaTeX\ makes writing easy - the table of contents, referencing figures, writing math equations, creating citations, and much more becomes trivial to do. If you have read an academic paper, it was probably written with \LaTeX. It can be scary at first, however, once you start using it, it is hard to turn back.
+
+\section{Bibliographies are hard to make. Do I need sources?}
+Bibliographies and citations follow standard requirements. They are not necessary if you are stating general knowledge (i.e. Voltage across a resistor can be found with $V = IR$, $\frac{\partial (x^2)}{\partial x} = 2x $, etc.). If you are using information from a specific source (academic paper, a speech, one book in particular, some obscure theorem, etc.), then it is necessary to cite. 
+
+It is completely acceptable to have no citations provided you are using tools or math that is widely known. We simply do not want any plagiarism or to deprive authors of credit. We will let you know if something looks like it needs a source.
+
+\LaTeX\ makes bibliographies much easier, especially with tools like Mendeley.
+
+\section{What will the submission process look like?}
+
+Please submit finished manuscripts to www.ieee.uc.edu/submit. These submissions will be sent to a select group of faculty and students for review. 
+
+We will not be rigorously checking your work for novelty or holes in methodology. The goal will be to ensure works contain content that is applicable to EECS (no perpetual motion machines, please), checking grammar, and putting everything in the right format.
+
+We will get back to you as soon as we can with a decision on acceptance and changes required. We will automatically make any minor edits (that's $\rightarrow$ that is), but send back larger edits for your discretion. 
+
+\section{What should a submission include?}
+The only required elements are an abstract, introduction, something in between, and conclusion.
+
+Here is a summary of what sections might include:
+\begin{itemize}[noitemsep]
+    \item Abstract (100-200 words)
+    \begin{itemize}
+        \item Like a regular abstract. Summarize why you did this work, why it is important, what is cool about it, and any important results achieved. 
+        \item Essentially, what is your paper all about?
+    \end{itemize}
+    \item Introduction
+    \begin{itemize}
+        \item Introduce the problem and a central hypothesis or investigatory question.
+        \item Cover any background necessary.
+    \end{itemize}
+    \item Methodology
+    \begin{itemize}
+        \item Describe, without results, how you addressed the problem.
+        \item What does the architecture of your test or solution look like?
+        \item This does not have to be a solution or concrete thing - you are more than welcome to write a survey or a summary of a topic. 
+    \end{itemize}
+    \item{Results (If this applies to you)}
+    \begin{itemize}
+        \item What results did you achieve? Did it work? How well did it work? How did you measure if it worked? 
+    \end{itemize}
+    \item{Conclusion}
+    \begin{itemize}
+        \item Short conclusion - tie it back to the introduction. Was your hypothesis correct? 
+    \end{itemize}
+\end{itemize}
+
+These are the basic elements, however, more or less is welcome - for example, future work. 
+
+
+\end{document}
